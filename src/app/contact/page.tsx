@@ -7,8 +7,8 @@ export default function ContactPage() {
 			<p>Get in touch for quotes, availability and event consultations.</p>
 
 			{/* Large Kampala image above the contact layout (reduced height) */}
-			<div style={{ height: 320, borderRadius: 8, overflow: 'hidden', marginTop: 20, marginBottom: 20, boxShadow: '0 10px 30px rgba(0,0,0,0.12)' }}>
-				<img src="/Genesis-events/kampala.jpg" alt="Kampala" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+			<div className="rounded overflow-hidden shadow" style={{ marginTop: 20, marginBottom: 20 }}>
+				<img src="/Genesis-events/kampala.jpg" alt="Kampala" className="w-full img-thumb-lg img-cover" />
 			</div>
 
 			<div className="contact-layout" style={{ marginTop: 0 }}>

@@ -23,7 +23,7 @@ export default function PortfolioPage() {
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
 				{images.map((img, i) => (
 					<div key={i} className="relative rounded-lg overflow-hidden bg-white shadow">
-						<img src={`/Genesis-events/${encodeURIComponent(img)}`} alt={img} className="w-full h-32 md:h-40 object-cover rounded-md shadow-sm hover:scale-105 transition-transform" />
+						<img src={`/Genesis-events/${encodeURIComponent(img)}`} alt={img} className="w-full img-thumb-md img-cover rounded-md shadow-sm hover:scale-105 transition-transform" />
 						<div className="absolute left-0 right-0 bottom-0 p-3 portfolio-overlay-gradient text-white">
 							<h4 className="font-semibold">Project {i + 1}</h4>
 							<p className="text-sm">Brief project summary</p>

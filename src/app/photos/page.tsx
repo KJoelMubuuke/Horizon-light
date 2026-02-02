@@ -12,7 +12,7 @@ export default function PhotosPage() {
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
 				{images.map(img => (
 					<div key={img} className="rounded overflow-hidden bg-white shadow">
-						<img src={`/Genesis-events/${encodeURIComponent(img)}`} alt={img} className="w-full h-24 md:h-32 object-cover rounded-md shadow-sm hover:scale-105 transition-transform" />
+						<img src={`/Genesis-events/${encodeURIComponent(img)}`} alt={img} className="w-full img-thumb-sm img-cover rounded-md shadow-sm hover:scale-105 transition-transform" />
 					</div>
 				))}
 			</div>

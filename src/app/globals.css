@@ -32,3 +32,20 @@
 @layer utilities {
   .portfolio-overlay-gradient { background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%); }
 }
+
+/* Centralized image size helpers with responsive tweaks */
+@layer components {
+  .img-cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .img-thumb-xs { height: 5rem; }
+  .img-thumb-sm { height: 6rem; }
+  .img-thumb-md { height: 8rem; }
+  .img-thumb-lg { height: 12rem; }
+
+  @media (min-width: 768px) {
+    .img-thumb-xs { height: 6.5rem; }
+    .img-thumb-sm { height: 8rem; }
+    .img-thumb-md { height: 10rem; }
+    .img-thumb-lg { height: 14rem; }
+  }
+}

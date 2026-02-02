@@ -40,17 +40,17 @@ export default function Home() {
       <section className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto px-6">
           <div className="bg-white rounded-lg overflow-hidden p-4 shadow">
-            <img src={`/Genesis-events/${encodeURIComponent('corporate1.jpg')}`} alt="Corporate Events" className="w-full h-24 md:h-32 object-cover rounded-md shadow-sm" />
+            <img src={`/Genesis-events/${encodeURIComponent('corporate1.jpg')}`} alt="Corporate Events" className="w-full img-thumb-sm img-cover rounded-md shadow-sm" />
             <h3 className="mt-3 text-lg font-semibold">Corporate Events</h3>
             <p className="text-gray-600">Full production and AV services for conferences, meetings and corporate shows.</p>
           </div>
           <div className="bg-white rounded-lg overflow-hidden p-4 shadow">
-            <img src={`/Genesis-events/${encodeURIComponent('wedding 3.jpg')}`} alt="Weddings & Ceremonies" className="w-full h-24 md:h-32 object-cover rounded-md shadow-sm" />
+            <img src={`/Genesis-events/${encodeURIComponent('wedding 3.jpg')}`} alt="Weddings & Ceremonies" className="w-full img-thumb-sm img-cover rounded-md shadow-sm" />
             <h3 className="mt-3 text-lg font-semibold">Weddings & Ceremonies</h3>
             <p className="text-gray-600">Beautifully executed ceremonies and receptions with professional staging and sound.</p>
           </div>
           <div className="bg-white rounded-lg overflow-hidden p-4 shadow">
-            <img src={`/Genesis-events/${encodeURIComponent('festivals.jpg')}`} alt="Festivals & Concerts" className="w-full h-24 md:h-32 object-cover rounded-md shadow-sm" />
+            <img src={`/Genesis-events/${encodeURIComponent('festivals.jpg')}`} alt="Festivals & Concerts" className="w-full img-thumb-sm img-cover rounded-md shadow-sm" />
             <h3 className="mt-3 text-lg font-semibold">Festivals & Concerts</h3>
             <p className="text-gray-600">Large-scale event production including lighting, sound and crowd management.</p>
           </div>
@@ -64,7 +64,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-4">
             {galleryImages.map((img) => (
                 <div key={img} className="rounded overflow-hidden bg-white shadow">
-                <img src={`/Genesis-events/${encodeURIComponent(img)}`} alt={img} className="w-full h-20 md:h-28 object-cover rounded-md shadow-sm hover:scale-105 transition-transform" />
+                <img src={`/Genesis-events/${encodeURIComponent(img)}`} alt={img} className="w-full img-thumb-xs img-cover rounded-md shadow-sm hover:scale-105 transition-transform" />
               </div>
             ))}
           </div>
