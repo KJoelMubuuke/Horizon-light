@@ -1,65 +1,96 @@
-import Image from "next/image";
+import React from "react";
+
+const galleryImages = [
+  'hero.jpg',
+  'hero_section.jpg',
+  'introduction.jpg',
+  'corporate1.jpg',
+  'lighting1.jpg',
+  'lighting2.jpg',
+  'sound.webp',
+  'events2.png'
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      {/* Hero */}
+      <section
+        className="py-24"
+        style={{
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.36), rgba(0,0,0,0.36)), url('/Genesis-events/hero.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '72vh'
+        }}
+      >
+        <div className="max-w-screen-xl mx-auto px-6 text-white flex items-center h-full">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl font-semibold leading-tight">Experience the pulse of Uganda's biggest events</h1>
+            <p className="mt-4 text-lg text-white/90">Event Production, Nompai | National/US Coverage</p>
+            <div className="mt-6">
+              <a className="btn-gold" href="/contact">Get a Free Quote</a>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Featured services */}
+      <section className="py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto px-6">
+          <div className="bg-white rounded-lg overflow-hidden p-4 shadow">
+            <img src={`/Genesis-events/${encodeURIComponent('corporate1.jpg')}`} alt="Corporate Events" className="w-full h-24 md:h-32 object-cover rounded-md shadow-sm" />
+            <h3 className="mt-3 text-lg font-semibold">Corporate Events</h3>
+            <p className="text-gray-600">Full production and AV services for conferences, meetings and corporate shows.</p>
+          </div>
+          <div className="bg-white rounded-lg overflow-hidden p-4 shadow">
+            <img src={`/Genesis-events/${encodeURIComponent('wedding 3.jpg')}`} alt="Weddings & Ceremonies" className="w-full h-24 md:h-32 object-cover rounded-md shadow-sm" />
+            <h3 className="mt-3 text-lg font-semibold">Weddings & Ceremonies</h3>
+            <p className="text-gray-600">Beautifully executed ceremonies and receptions with professional staging and sound.</p>
+          </div>
+          <div className="bg-white rounded-lg overflow-hidden p-4 shadow">
+            <img src={`/Genesis-events/${encodeURIComponent('festivals.jpg')}`} alt="Festivals & Concerts" className="w-full h-24 md:h-32 object-cover rounded-md shadow-sm" />
+            <h3 className="mt-3 text-lg font-semibold">Festivals & Concerts</h3>
+            <p className="text-gray-600">Large-scale event production including lighting, sound and crowd management.</p>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="py-12">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <h2 className="text-2xl font-semibold">Event Gallery</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-4">
+            {galleryImages.map((img) => (
+                <div key={img} className="rounded overflow-hidden bg-white shadow">
+                <img src={`/Genesis-events/${encodeURIComponent(img)}`} alt={img} className="w-full h-20 md:h-28 object-cover rounded-md shadow-sm hover:scale-105 transition-transform" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why choose us */}
+      <section className="bg-[var(--color-navy)] text-white py-12">
+        <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div>
+            <svg className="mx-auto" width="42" height="42" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8H9L12 2Z" fill="white"/></svg>
+            <h4 className="mt-3 font-semibold">Cultivating Edge Tech</h4>
+            <p className="mt-2 text-sm">We use modern production tech to give your events an edge.</p>
+          </div>
+          <div>
+            <svg className="mx-auto" width="42" height="42" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8H9L12 2Z" fill="white"/></svg>
+            <h4 className="mt-3 font-semibold">Experienced Team</h4>
+            <p className="mt-2 text-sm">Professionals with years of experience in event production.</p>
+          </div>
+          <div>
+            <svg className="mx-auto" width="42" height="42" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8H9L12 2Z" fill="white"/></svg>
+            <h4 className="mt-3 font-semibold">Trusted by Top Brands</h4>
+            <p className="mt-2 text-sm">We've worked with leading brands across the region.</p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
